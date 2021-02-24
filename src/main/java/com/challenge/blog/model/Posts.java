@@ -1,15 +1,24 @@
 package com.challenge.blog.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "posts")
 public class Posts {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String title;
 	private String content;
 	private String image;
 	private String category;
-	private Date date;
+	private LocalDateTime date;
 
 	public Integer getId() {
 		return id;
@@ -51,11 +60,11 @@ public class Posts {
 		this.category = category;
 	}
 
-	public Date getDate() {
+	public LocalDateTime getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
 
