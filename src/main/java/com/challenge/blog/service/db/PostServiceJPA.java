@@ -15,13 +15,12 @@ public class PostServiceJPA implements IPostService {
 
 	@Autowired
 	private PostRepository repoPost;
-	
+
 	@Override
 	public void save(Posts post) {
 		repoPost.save(post);
-		
-	}
 
+	}
 	@Override
 	public List<Posts> searchAll() {
 		return repoPost.findAll();
@@ -30,7 +29,7 @@ public class PostServiceJPA implements IPostService {
 	@Override
 	public Posts searchById(Integer idPosts) {
 		Optional<Posts> optional = repoPost.findById(idPosts);
-		if(optional.isPresent()) {
+		if (optional.isPresent()) {
 			return optional.get();
 		}
 		return null;
@@ -44,7 +43,6 @@ public class PostServiceJPA implements IPostService {
 	@Override
 	public void edit(Integer idPosts) {
 		repoPost.findById(idPosts);
-		
 	}
 
 }
