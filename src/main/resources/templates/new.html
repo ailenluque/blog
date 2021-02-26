@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+<!-- Bootstrap core CSS -->
+<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link th:href="@{/bootstrap/css/jumbotron.css}" rel="stylesheet">
+<link th:href="@{/bootstrap/css/sticky-footer-navbar.css}"
+	rel="stylesheet">
+</head>
+<body>
+	<header th:insert="fragment/menu.html :: menu"> </header>
+
+	<main role="main">
+
+		<div class="container">
+
+			<div class="card">
+				<h4 class="card-header">
+					<strong>Nuevo post</strong>
+				</h4>
+				<div class="card-body">
+					<form th:action="@{/home}" method="post" th:object="${post}">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="form-group">
+									<label for="title">Titulo</label> <input type="text" th:field="*{title}"
+										class="form-control" id="title" name="title"
+										placeholder="Titulo" required="required">
+								</div>
+							</div>
+
+							<div class="col-md-3">
+								<div class="form-group">
+									<label for="category">Categoria</label> <input type="text" th:field="*{category}"
+										class="form-control" name="category" id="category"
+										placeholder="1=dulce | 2=salado" required="required">
+								</div>
+							</div>
+						</div>
+							
+						<div class="row">
+							<div class="col-md-3">
+								<div class="form-group">
+									<label for="content">Contenido</label> <input type="text" th:field="*{content}"
+										class="form-control" name="content" id="content"
+										placeholder="" required="required">
+								</div>
+							</div>
+
+
+
+						</div>
+
+						<button type="submit" class="btn btn-primary">Guardar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+
+	<!-- Bootstrap core JavaScript-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script th:src="@{bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

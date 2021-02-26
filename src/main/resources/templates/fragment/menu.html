@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-primary fixed-top bg-light"
+		th:fragment="menu">
+		<div class="container-fluid">
+			<a class="navbar-brand" disabled>BLOG</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarsExampleDefault"
+				aria-controls="navbarsExampleDefault" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link active"
+						th:href="@{/home}">Inicio</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package com.challenge.blog.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
@@ -8,9 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name = "posts")
-public class Posts {
+public class Posts implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -18,6 +25,7 @@ public class Posts {
 	private String content;
 	private String image;
 	private String category;
+	@CreationTimestamp
 	private LocalDateTime date;
 
 	public Integer getId() {
