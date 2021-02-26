@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Insert title here</title>
+<!-- Bootstrap core CSS -->
+<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link th:href="@{/bootstrap/css/jumbotron.css}" rel="stylesheet">
+<link th:href="@{/bootstrap/css/sticky-footer-navbar.css}"
+	rel="stylesheet">
+</head>
+<body>
+<header th:insert="fragment/menu.html :: menu"> </header>
+
+	<main role="main">
+		<hr>
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card">
+						<h4 class="card-header">
+							Post de <strong th:text="${post.title}"></strong>
+						</h4>
+						<div class="card-body">
+							<h5 class="card-title">
+								<strong>Categoria </strong> <span
+									th:text="${post.category}"></span>
+							</h5>
+							<h6 class="card-title">
+								<strong>Publicado: </strong><span th:text="${post.date}"></span>
+							</h6>
+							
+							<div class="card bg-light mb-3">
+								<div class="card-body">
+									<h5 class="card-title">Contenido</h5>
+									<p class="card-text" th:text="${post.content}"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</main>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script th:src="@{bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

@@ -1,20 +1,20 @@
 package com.challenge.blog.service;
 
 import java.util.List;
-
-import org.springframework.stereotype.Service;
-
 import com.challenge.blog.model.Posts;
 
-@Service
+
 public interface IPostService {
+	
+	
+
 	void save(Posts posts);
 
 	List<Posts> searchAll();
 
-	Posts searchById(Integer idPosts);
+	Posts searchById(Integer idPost);
 
-	void delete(Integer idPosts);
+	void delete(Integer idPost);
 
-	void edit(Integer idPosts);
+	void edit(Integer idPost);
 }
