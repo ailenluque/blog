@@ -13,7 +13,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "posts")
-public class Posts implements Serializable{
+public class Posts implements Serializable {
 	/**
 	 * 
 	 */

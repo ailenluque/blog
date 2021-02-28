@@ -16,14 +16,14 @@ public class PostServiceJPA implements IPostService {
 
 	@Autowired
 	private PostRepository repoPost;
-	
+
 	@Transactional
 	@Override
 	public void save(Posts post) {
 		repoPost.save(post);
 
 	}
-	
+
 	@Transactional(readOnly = true)
 	@Override
 	public List<Posts> searchAll() {

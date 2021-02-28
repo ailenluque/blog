@@ -3,10 +3,7 @@ package com.challenge.blog.service;
 import java.util.List;
 import com.challenge.blog.model.Posts;
 
-
 public interface IPostService {
-	
-	
 
 	void save(Posts posts);
 
