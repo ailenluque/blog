@@ -3,12 +3,9 @@ package com.challenge.blog.service;
 import java.util.List;
 import com.challenge.blog.model.Posts;
 
-
 public interface IPostService {
-	
-	
 
-	void save(Posts posts);
+	Posts save(Posts posts);
 
 	List<Posts> searchAll();
 
@@ -17,4 +14,6 @@ public interface IPostService {
 	void delete(Integer idPost);
 
 	void edit(Integer idPost);
+	
+	public String update(Posts post);
 }

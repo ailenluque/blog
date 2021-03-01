@@ -22,31 +22,34 @@
 					<strong>Nuevo post</strong>
 				</h4>
 				<div class="card-body">
-					<form th:action="@{/home}" method="post" th:object="${post}">
+					<form th:action="@{/save}" method="POST" th:object="${post}">
 						<div class="row">
 							<div class="col-md-3">
 								<div class="form-group">
-									<label for="title">Titulo</label> <input type="text" th:field="*{title}"
-										class="form-control" id="title" name="title"
-										placeholder="Titulo" required="required">
+									<label for="title">Titulo</label> <input type="text"
+										 class="form-control" id="title"
+										name="title" placeholder="Titulo" required="required">
 								</div>
 							</div>
 
+
 							<div class="col-md-3">
 								<div class="form-group">
-									<label for="category">Categoria</label> <input type="text" th:field="*{category}"
-										class="form-control" name="category" id="category"
-										placeholder="1=dulce | 2=salado" required="required">
+									<label for="category">Categoria</label> <select
+										class="form-group" name="category">
+										<option value="1"></option>
+										<option value="2"></option>
+									</select>
 								</div>
 							</div>
 						</div>
-							
+
 						<div class="row">
 							<div class="col-md-3">
 								<div class="form-group">
-									<label for="content">Contenido</label> <input type="text" th:field="*{content}"
-										class="form-control" name="content" id="content"
-										placeholder="" required="required">
+									<label for="content">Contenido</label> <input type="text"
+										 class="form-control" name="content"
+										id="content" placeholder="" required="required">
 								</div>
 							</div>
 

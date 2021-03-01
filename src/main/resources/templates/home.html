@@ -43,7 +43,7 @@
 							<tr>
 								<th scope="col">Titulo</th>
 								<th scope="col">Categoria</th>
-								<th scope="col">Mas detalles</th>
+								<th scope="col">Detalle</th>
 								<th scope="col">Operaciones</th>
 							</tr>
 						</thead>
@@ -51,16 +51,21 @@
 							<tr th:each="post : ${posts}">
 								<td th:text="${post.title}"></td>
 								<td th:text="${post.category=='dulce' ? 'DULCE' : 'SALADO'}"></td>
-								<td><a class="btn btn-secondary"
+								<td>
+								<a class="btn btn-secondary"
 									th:href="@{/detail/{id} (id=${post.id})}" role="button">Ver
-										</a></td>
-								<td><a th:href="@{/edit/{id} (id=${post.id}) }"
+										</a>
+										</td>
+								<td>
+									<a th:action="@{/edit/{id} (id=${post.id}) }" th:method="PATCH"
 									class="btn btn-success btn-sm" role="button"
-									title="Editar el registro.">Editar</a> <a
-									th:action="@{/delete/{id} (id=${post.id}) }"
+									title="Editar el post">Editar</a> 
+									<a th:action="@{/delete/{id} (id=${post.id}) }" th:method="DELETE"
 									class="btn btn-danger btn-sm" role="button"
 									onclick="return confirm('¿Estas seguro?')"
-									title="Eliminar el registro.">Eliminar</a></td>
+									title="Eliminar el post">Eliminar</a>
+								</td>
+									
 							</tr>
 						</tbody>
 					</table>
